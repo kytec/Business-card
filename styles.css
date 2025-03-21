@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f8ff;
+    font-family: 'Arial', sans-serif;
+}
+
+.business-card {
+    width: 500px;
+    height: 280px;
+    background: linear-gradient(135deg, 
+        #2b5cac 0%,
+        #3d7dd8 25%,
+        #ff7b1f 75%,
+        #ff8534 100%
+    );
+    background-size: 300% 300%;
+    animation: gradientShift 15s ease infinite;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(75, 137, 220, 0.25);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Logo styles */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 3;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Foundation background design */
+.business-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        /* Top platform */
+        linear-gradient(90deg, 
+            rgba(255,255,255,0.15) 0%, 
+            rgba(255,255,255,0.3) 50%, 
+            rgba(255,255,255,0.15) 100%) 0 40px no-repeat,
+        /* Pillars */
+        repeating-linear-gradient(90deg, 
+            rgba(255,255,255,0.2) 0px,
+            rgba(255,255,255,0.2) 30px,
+            transparent 30px,
+            transparent 60px) 0 60px no-repeat,
+        /* Base platform */
+        linear-gradient(90deg, 
+            rgba(255,255,255,0.2) 0%, 
+            rgba(255,255,255,0.4) 50%, 
+            rgba(255,255,255,0.2) 100%) 0 200px no-repeat;
+    background-size: 100% 25px, 100% 140px, 100% 35px;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.business-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at top right,
+        rgba(255, 123, 31, 0.3) 0%,
+        transparent 60%
+    );
+    z-index: 1;
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 123, 31, 0.2), 0 15px 25px rgba(75, 137, 220, 0.25);
+}
+
+.card-front {
+    padding: 35px;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.card-front::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    z-index: 0;
+}
+
+.name {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 3;
+    padding-right: 70px;
+    letter-spacing: 0.5px;
+}
+
+.titles {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 0.7px;
+    position: relative;
+    z-index: 3;
+    padding-right: 70px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    font-weight: 500;
+}
+
+.position {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    z-index: 3;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    letter-spacing: 0.5px;
+}
+
+.contact-info {
+    margin-top: 25px;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 2px 0;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.contact-info a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: white;
+    transform: translateX(3px);
+}
+
+.contact-info a:hover::after {
+    width: 100%;
+}
+
+.contact-info .phone {
+    color: #ffffff;
+}
+
+.contact-info .phone:hover {
+    color: white;
+}
