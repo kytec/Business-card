@@ -24,6 +24,20 @@
             </div>
         </div>
     </div>
+    <div class="qr-section">
+        <button id="showQR" class="qr-button">Show QR Code</button>
+        <div id="qrModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Scan QR Code to Save Contact</h2>
+                <div id="qrcode"></div>
+                <p class="qr-info">Scan this code to view the digital business card</p>
+                <button id="downloadPDF" class="download-button">Download QR Code as PDF</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
