@@ -188,12 +188,11 @@ body {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
-    position: relative;
-    z-index: 3;
 }
 
 .contact-info p {
     margin: 8px 0;
+    text-align: center;
 }
 
 .contact-info a {
@@ -201,17 +200,21 @@ body {
     text-decoration: none;
     font-size: clamp(14px, 3vw, 16px);
     display: inline-block;
-    padding: 5px 10px;
+    padding: 8px 15px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
     word-break: break-word;
+    width: auto;
+    max-width: 100%;
+    letter-spacing: 0.5px;
 }
 
 .contact-info a:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .qr-section {
@@ -308,7 +311,13 @@ body {
     }
 
     .contact-info {
-        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .contact-info a {
+        font-size: 14px;
+        padding: 8px 12px;
+        margin: 4px 0;
     }
 }
 
